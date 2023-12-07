@@ -8,24 +8,24 @@
     <form method="post" action="">
         {{ form.hidden_tag() }}
         <div class="register-form-label">
-            <h2>Username:</h2>
-            <h2 class="second-label">Email:</h2>
+            <h2>{{ form.username.label }}:</h2>
+            <h2 class="second-label">{{ form.email.label }}:</h2>
         </div>
         <div class="register-form">
             {{ form.username(class="loginform") }}
             {{ form.email(class="loginform") }}
         </div>
         <div class="register-form-label">
-            <h2>First Name:</h2>
-            <h2 class="second-label">Last Name:</h2>
+            <h2>{{ form.fName.label }}:</h2>
+            <h2 class="second-label">{{ form.lName.label }}:</h2>
         </div>
         <div class="register-form">
             {{ form.fName(class="loginform") }}
             {{ form.lName(class="loginform") }}
         </div>
         <div class="register-form-label">
-            <h2>Password:</h2>
-            <h2 class="second-label">Confirm Password:</h2>
+            <h2>{{ form.pw.label }}:</h2>
+            <h2 class="second-label">{{ form.pw2.label }}:</h2>
         </div>
             
         <div type="password" class="register-form">
@@ -34,7 +34,7 @@
         </div>
         <div class="loginbtn-container">
             {{ form.submit(class="loginbtn btn btn-primary") }}
-            <p>Already have an account? <a href="../login">Login</a></p>
+            <p>Already have an account? <a class="hyperlink" href="../login">Login</a></p>
         </div>
         
     </form>

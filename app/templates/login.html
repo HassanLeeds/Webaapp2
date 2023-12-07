@@ -7,15 +7,15 @@
     <div class="logo-login"><h1 class="social">Social</h1><h1 class="spot">Spot</h1></div>
     <form method="post" action="">
         {{ form.hidden_tag() }}
-        <h2>Username:</h2>
+        <h2>{{ form.username.label }}:</h2>
         {{ form.username(class="loginform") }}
         <div type="password">
-            <h2>Password:</h2>
+            <h2>{{ form.pw.label }}:</h2>
             {{ form.pw(class="loginform") }}
         </div>
         <div class="loginbtn-container">
-            {{ form.submit(class="loginbtn btn bt-primary") }}
-            <p>Don't have an account? <a href="../register">Register</a></p>
+            {{ form.submit(class="loginbtn btn btn-primary") }}
+            <p>Don't have an account? <a class="hyperlink" href="../register">Register</a></p>
         </div>
         
     </form>

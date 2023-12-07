@@ -11,7 +11,6 @@ $(document).ready(function () {
             heart = false;
         }
         let container = $(".heart-form" + post_id);
-        console.log(heart)
 
         $.ajax({
             url: "/heart/" + post_id,
@@ -21,7 +20,6 @@ $(document).ready(function () {
             dataType: 'json',
             success: function (response) {
                 if (response.result === "success") {
-                    // Update the UI based on the response, e.g., change the heart button image
                     if (response.heart) {
                         container.find('input[name="heart"]').attr('src', '../static/hearted.png');
                     } else {

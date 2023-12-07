@@ -19,10 +19,10 @@ $(document).ready( function () {
             success: function(response) {
                 if (response.result === "success") {
                     let comment_append = `
-                    <h2>${response.comment.content}</h2>
+                    <h2>${response.comment.username}</h2>
                     <h3>${response.comment.content}</h3>
                     `
-                    container.append(comment_append);
+                    container.prepend(comment_append);
                     content.val("");
                 }
             }

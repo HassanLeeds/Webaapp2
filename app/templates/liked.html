@@ -7,6 +7,9 @@
     <div class="profile_username">
         Your Liked Posts
     </div>
+    {% if posts == [] %}
+    <div class="empty-page">Nothing to Show</div>
+    {% endif %}
     {% for post in posts %}
     <div class="post">
         <a class="user-hyperlink" href="/{{ post.username }}"><h2>{{ post.username }}</h2></a>
@@ -14,7 +17,7 @@
     
     {% if post.path != "NA" %}
     <div>
-        <img class="image" src="{{ post.path }}">
+        <img class="image" src="{{ post.path }}" alt="Uploaded Image">
     </div>
     {% endif %}
 
@@ -27,27 +30,26 @@
             <form class="heart-form{{ post.postID }}">
             {% if post.postID not in hearts %}
                 <input type="hidden" name="postID" value="{{ post.postID }}">
-                <input type="image" src="../static/heart.png" name="heart" class="heart">
+                <input type="image" src="../static/heart.png" name="heart" class="heart" alt="Like Button">
             {% elif post.postID in hearts %}
                 <input type="hidden" name="postID" value="{{ post.postID }}">
-                <input type="image" src="../static/hearted.png" name="heart" class="heart">
+                <input type="image" src="../static/hearted.png" name="heart" class="heart" alt="Like Button">
             {% endif %}
             </form>
         </div>
-            <div class="modal fade" id="modal{{ post.postID }}" tabindex="-1" role="dialog" aria-labelledby="Comments" aria-hidden="true">
+            <div class="modal fade" id="modal{{ post.postID }}" tabindex="-1" role="dialog" aria-label="Comments" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
                       <h5 class="modal-title" id="modalLabel">Comments</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
                     </div>
                     <div class="modal-body">
                       <form method="post" class="comment-container" name="comment_form">
                         {{ comment_form.csrf_token() }}
+                        {{ comment_form.comment.label }}
                         {{ comment_form.postID(value=post.postID) }}
                         {{ comment_form.comment(class="comment") }}
+                        {{ comment_form.submit(class="loginbtn btn btn-primary") }}
                       </form>
                       <div class="comments-container">
                         {% for comment in comments %}
