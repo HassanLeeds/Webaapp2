@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+{% extends "base.html" %}
+
+{% block content %}
+<div class="posts">
+    <div class="profile_username">
+        {{ user.username }}'s Profile
+    </div>
+    {% for post in posts %}
+    <div class="post">
+        <a class="user-hyperlink" href="/{{ post.username }}"><h2>{{ post.username }}</h2></a>
+        <h3>{{ post.caption }}</h3>
+    
+    {% if post.path != "NA" %}
+    <div>
+        <img class="image" src="{{ post.path }}">
+    </div>
+    {% endif %}
+
+    <div class="interaction">
+        <div class="post-btns">
+            <button type="button" class="comments-btn btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal{{ post.postID }}">
+                Comments
+            </button>
+
+            <form class="heart-form{{ post.postID }}">
+            {% if post.postID not in hearts %}
+                <input type="hidden" name="postID" value="{{ post.postID }}">
+                <input type="image" src="../static/heart.png" name="heart" class="heart">
+            {% elif post.postID in hearts %}
+                <input type="hidden" name="postID" value="{{ post.postID }}">
+                <input type="image" src="../static/hearted.png" name="heart" class="heart">
+            {% endif %}
+            </form>
+        </div>
+            <div class="modal fade" id="modal{{ post.postID }}" tabindex="-1" role="dialog" aria-labelledby="Comments" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="modalLabel">Comments</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form method="post" class="comment-container" name="comment_form">
+                        {{ comment_form.csrf_token() }}
+                        {{ comment_form.postID(value=post.postID) }}
+                        {{ comment_form.comment(class="comment") }}
+                      </form>
+                      <div class="comments-container">
+                        {% for comment in comments %}
+                          {% if comment.postID == post.postID %}
+                            <a class="user-hyperlink" href="/{{ comment.username }}"><h2>{{ comment.username }}</h2></a>
+                            <h3>{{ comment.comment }}</h3>
+                          {% endif %}
+                        {% endfor %}
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

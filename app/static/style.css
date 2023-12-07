@@ -1,0 +1,266 @@
+body {
+    background-color: rgb(231, 231, 231);
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 70px;
+    margin-bottom: 5%;
+    margin-top: 12%;
+}
+
+.posts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.post {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    width: 60%;
+    min-width: 500px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 1vh;
+}
+
+.post h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 1%;
+    padding: 2%;
+    color: rgb(44, 149, 215);
+}
+
+.post h3 {
+    font-size: large;
+    margin-top: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.image {
+    width:100%;
+    height: auto;
+}
+
+
+.buttons {
+    text-align: center;
+}
+
+.comment {
+    width: 96%;
+    margin: 1%;
+    height: 40px;
+    border-radius: 20px;
+    padding-left: 3%;
+    margin-bottom: 4%;
+    border-color: rgb(44, 149, 215);
+}
+
+.newpost {
+    width: 50%;
+    height: 200px;
+    border-radius: 20px;
+    padding-left: 3%;
+    border-color: rgb(44, 149, 215);
+    border-style: solid;
+    resize: none;
+    margin-bottom: 2%;
+    margin-top: 3%;
+}
+
+.newpost-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3%;
+}
+
+.newpost-container h1 {
+    font-size: 60px;
+    margin: 0%;
+    margin-top: 2%;
+    text-decoration: underline;
+    text-decoration-color: rgb(44, 149, 215);
+}
+
+.newpost-btns {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+.newpost-btns p {
+    font-size: larger;
+    font-weight: bold;
+    margin-right: 2%;
+    margin-left: 3%;
+}
+
+.post-btn {
+    background-color: rgb(44, 149, 215);
+    margin: 2%;
+    margin-bottom: 4%;
+    width: 40%;
+    font-size: larger;
+    color: white;
+}
+
+
+.attach-btn {
+    background-color: rgb(44, 149, 215);
+    margin: 2%;
+    margin-bottom: 4%;
+    width: 40%;
+    font-size: larger;
+    color: white;
+}
+
+.attach {
+    display: none;
+}
+
+.comments-btn {
+    background-color: rgb(44, 149, 215);
+    margin: 2%;
+    margin-bottom: 4%;
+    width: 85%;
+    margin-right: 4%;
+    font-size: larger;
+}
+
+.heart {
+    height: 40px;
+    width: 40px;
+}
+
+.post-btns {
+    display: flex;
+    align-items: center;
+}
+
+.loginbtn {
+    background-color: rgb(44, 149, 215);
+    margin: 2%;
+    margin-bottom: 4%;
+    width: 30%;
+    margin-right: 4%;
+    font-size: larger;
+}
+
+.loginform {
+    min-width: 400px;
+    height: 50px;
+    margin-bottom: 10%;
+    border-color: rgb(135, 135, 135);
+    border-style: solid;
+    font-size: larger;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.loginbtn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-login {
+    margin-top: 10%;
+    margin-bottom: 4%;
+    display: flex;
+}
+
+.logo-register {
+    margin-top: 3%;
+    margin-bottom: 2%;
+    display: flex;
+}
+
+.social {
+    color: rgb(44, 149, 215);
+    font-size: 90px;
+}
+
+.spot {
+    color: black;
+    text-decoration-line: underline;
+    text-decoration-color: rgb(44, 149, 215);
+    font-size: 90px;
+}
+
+.logo-home {
+    display: flex;
+    align-items:end;
+    margin-top: -10%;
+}
+
+.social-home {
+    color: rgb(44, 149, 215);
+    font-size: 40px;
+}
+
+.spot-home {
+    color: black;
+    text-decoration-line: underline;
+    text-decoration-color: rgb(44, 149, 215);
+    font-size: 40px;
+}
+
+.nav-link {
+    color: rgb(0, 0, 0);
+    font-size: larger;
+    font-weight: bold;
+}
+
+.register-form-label {
+    display: flex;
+    margin-left: 2%;
+}
+
+.register-form-label h2 {
+    width: 50%;
+}
+
+.register-form {
+    display: flex;
+}
+
+.second-label {
+    margin-left: 10%;
+}
+
+.profile_username {
+    text-align: center;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(44, 149, 215);
+    background-color: white;
+    padding: 2%;
+    border-radius: 20px;
+}
+
+.user-hyperlink {
+    text-decoration: none;
+}
+
+.alert {
+    background-color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
