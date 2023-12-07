@@ -5,23 +5,23 @@
 {% block content %}
 <div class="login-container">
     <div class="logo-register"><h1 class="social">Social</h1><h1 class="spot">Spot</h1></div>
-    <form method="post" action="">
+    <form method="post" action="" role="form">
         {{ form.hidden_tag() }}
         <div class="register-form-label">
             <h2>{{ form.username.label }}:</h2>
             <h2 class="second-label">{{ form.email.label }}:</h2>
         </div>
         <div class="register-form">
-            {{ form.username(class="loginform") }}
-            {{ form.email(class="loginform") }}
+            {{ form.username(class="loginform", role="textbox") }}
+            {{ form.email(class="loginform", role="textbox") }}
         </div>
         <div class="register-form-label">
             <h2>{{ form.fName.label }}:</h2>
             <h2 class="second-label">{{ form.lName.label }}:</h2>
         </div>
         <div class="register-form">
-            {{ form.fName(class="loginform") }}
-            {{ form.lName(class="loginform") }}
+            {{ form.fName(class="loginform", role="textbox") }}
+            {{ form.lName(class="loginform", role="textbox") }}
         </div>
         <div class="register-form-label">
             <h2>{{ form.pw.label }}:</h2>
@@ -29,12 +29,12 @@
         </div>
             
         <div type="password" class="register-form">
-            {{ form.pw(class="loginform") }}
-            {{ form.pw2(class="loginform") }}
+            {{ form.pw(class="loginform", role="textbox") }}
+            {{ form.pw2(class="loginform", role="textbox") }}
         </div>
         <div class="loginbtn-container">
-            {{ form.submit(class="loginbtn btn btn-primary") }}
-            <p>Already have an account? <a class="hyperlink" href="../login">Login</a></p>
+            {{ form.submit(class="loginbtn btn btn-primary", role="button") }}
+            <p>Already have an account? <a class="hyperlink" href="../login" role="button">Login</a></p>
         </div>
         
     </form>

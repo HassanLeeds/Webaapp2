@@ -12,7 +12,7 @@
     </head>
     <body>
         {% if page == "home" %}
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary" role="navigation">
           <div class="container-fluid">
             <a class="navbar-brand" href="/"><div class="logo-home"><h1 class="social-home">Social</h1><h1 class="spot-home">Spot</h1></div></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,13 +21,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="/logout">Logout</a>
+                  <a class="nav-link" aria-current="page" href="/logout" role="button">Logout</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/{{ user.username }}">My Profile</a>
+                  <a class="nav-link" href="/{{ user.username }}" role="button">My Profile</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/likes">Liked Posts</a>
+                  <a class="nav-link" href="/likes" role="button">Liked Posts</a>
                 </li>
               </ul>
             </div>
@@ -37,7 +37,7 @@
         {% with messages = get_flashed_messages(with_categories = true) %}
           {% if messages %}
               {% for category, message in messages %}
-                  <div class="alert">
+                  <div class="alert" role="alert">
                       {{message}}
                   </div>
               {% endfor %}

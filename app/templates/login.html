@@ -4,18 +4,18 @@
 
 {% block content %}
 <div class="login-container">
-    <div class="logo-login"><h1 class="social">Social</h1><h1 class="spot">Spot</h1></div>
-    <form method="post" action="">
+    <div class="logo-login" role="text"><h1 class="social">Social</h1><h1 class="spot">Spot</h1></div>
+    <form method="post" action="" role="form">
         {{ form.hidden_tag() }}
         <h2>{{ form.username.label }}:</h2>
-        {{ form.username(class="loginform") }}
+        {{ form.username(class="loginform", role="textbox") }}
         <div type="password">
             <h2>{{ form.pw.label }}:</h2>
-            {{ form.pw(class="loginform") }}
+            {{ form.pw(class="loginform", role="textbox") }}
         </div>
         <div class="loginbtn-container">
-            {{ form.submit(class="loginbtn btn btn-primary") }}
-            <p>Don't have an account? <a class="hyperlink" href="../register">Register</a></p>
+            {{ form.submit(class="loginbtn btn btn-primary", role="button") }}
+            <p>Don't have an account? <a class="hyperlink" href="../register" role="button">Register</a></p>
         </div>
         
     </form>
